@@ -2,5 +2,7 @@
 # This script replaces port 8080 in the Nginx configuration file with port 80 and starts the Ngin# x service.
 
 sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
+#stops server
 sudo service nginx stop
+#start server
 sudo service nginx start
