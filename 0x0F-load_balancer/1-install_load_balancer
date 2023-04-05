@@ -23,8 +23,8 @@ frontend client
 
 backend myservers
     mode http
-    server 134081-web-01 52.87.153.8
-    server 134081-web-02 100.25.38.116
+    server 134081-web-01 52.87.153.8:80 check
+    server 134081-web-02 100.25.38.116:80 check
 EOF
 fi
 
