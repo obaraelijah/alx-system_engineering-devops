@@ -7,7 +7,7 @@ sudo apt-get install haproxy -y
 # Configure loadbalancer
 sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null <<EOT
 frontend myfrontend
-        bind *:8080
+        bind *:80
         default_backend myservers
 backend myservers
         balance roundrobin
