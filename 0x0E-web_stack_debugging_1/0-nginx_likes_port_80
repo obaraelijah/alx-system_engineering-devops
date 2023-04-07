@@ -6,4 +6,4 @@ sudo rm /etc/nginx/sites-enabled/default
 
 sudo ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/
 
-sudo systemctl restart nginx 
+sudo service nginx restart 
