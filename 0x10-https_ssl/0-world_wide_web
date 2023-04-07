@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+# Bash script for DNS subdomain audit with optional subdomain parameter and default subdomains to che#ck if not specified.
+
+
+fetchDomains() {
+for subdomain in "www" "lb-01" "web-01" "web-02"
+do
+cmd="$subdomain"."$1"
+filter="/^[a-z]/ { print \"The subdomain \" subdomain \" is a \" \$4 \" record and points to \" \$5 }"
+
+dig $cmd | awk -v subdomain="$subdomain" "$filter"
+done
+}
+
+singleDomain() {
+subdomain="$2"
+cmd="$subdomain"."$1"
+filter="/^[a-z]/ { print \"The subdomain \" subdomain \" is a \" \$4 \" record and points to \" \$5 }"
+
+dig $cmd | awk -v subdomain="$subdomain" "$filter"
+}
+
+if [ "$#" -eq 1 ]
+then
+	fetchDomains "$1"
+elif [ "$#" -eq 2 ]
+then
+	singleDomain "$1" "$2"
+fi
