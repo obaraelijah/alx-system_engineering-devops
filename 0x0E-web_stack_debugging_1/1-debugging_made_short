@@ -3,6 +3,5 @@
 
 sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
 #stops server
-sudo service nginx stop
-#start server
-sudo service nginx start
+sudo sysytemctl restart nginx
+kill -9 "$(cat /run/nginx.pid)"
