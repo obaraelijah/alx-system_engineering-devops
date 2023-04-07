@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
-# This script replaces port 8080 in the Nginx configuration file with port 80 and starts the Ngin# x service.
-
-sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
-#stops server
-sudo sysytemctl restart nginx
+# This script replaces port 8080 in the Nginx configuration file with port 80 and starts the Ngin# x 
+sudo sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
+sudo service nginx restart
 kill -9 "$(cat /run/nginx.pid)"
