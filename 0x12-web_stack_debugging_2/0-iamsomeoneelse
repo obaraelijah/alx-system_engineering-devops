@@ -1,1 +1,11 @@
-sudo -u $1 whoami
+#!/usr/bin/env bash
+# Runs whoami in a different user account
+
+account=$1
+
+if [ "$#" -eq 1 ]
+then
+	su "$account" -c whoami
+else
+	whoami
+fi
