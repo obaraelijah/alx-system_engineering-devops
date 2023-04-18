@@ -1,0 +1,1 @@
+mysql configuring in  servers 
