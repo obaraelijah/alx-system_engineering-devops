@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Create a backup of all databases and an archives it
+
+CURRENT_DATE =(date +%d-%m-%Y) 
+passwd=$1
+filename=$CURRENT_DATE.tar.gz
+
+mysqldump -u root -p"$passwd" --all-databases > backup.sql
+tar -czf "$filename" backup.sql
+tar -tf "$filename"
