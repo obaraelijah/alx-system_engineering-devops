@@ -14,7 +14,7 @@ if __name__ == "__main__":
     user_name = user_dict.get("username")
     user_todo = requests.get("{}/todos".format(user_url))
     user_todo = user_todo.json()
-    file_name = user_id + ".json"
+    file_name = f"{user_id}.json"
     my_dict = {}
 
     my_dict[user_id] = []
