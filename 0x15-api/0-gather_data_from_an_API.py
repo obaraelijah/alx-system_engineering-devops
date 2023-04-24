@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 '''A script that gathers data from an API.
+
 '''
-import requests
 import sys
+import requests
+
 
 if __name__ == "__main__":
     user_id =sys.argv[1]
